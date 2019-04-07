@@ -1,0 +1,15 @@
+{
+  "login" : {
+      "userName" : "Luke",
+      "password" : "Skywalker"
+    },
+  "create": {
+    "firstName" : "ssss",
+    "lastName" : "ssss",
+    "startDate" : "2019-04-06",
+    "email" : "sss@sss.com"
+  },
+  "update": {
+    "email" : "sss@sss.com"
+  }
+}

@@ -1,3 +1,5 @@
+var TestData = require('./testData.json');
+
 describe('Test Suite Start', function() {
 console.log("Test Suite Start");
 beforeEach(function(done) {
@@ -25,8 +27,8 @@ it('validate user label', function() {
 	
   it('Enter Login and click', function() {
    
-    element(by.model('user.name')).sendKeys('Luke');
-	element(by.model('user.password')).sendKeys('Skywalker');
+    element(by.model('user.name')).sendKeys(TestData.login.userName);
+	element(by.model('user.password')).sendKeys(TestData.login.password);
 	element(by.css('button[type="submit"]')).click();
     expect(element(by.id('greetings')).getText()).toEqual('Hello Luke');
 	console.log("Test Case : Enter Login Details and click");
@@ -40,10 +42,10 @@ it('validate user label', function() {
   });
   
   it('Enter User Details', function() {
-   element(by.model('selectedEmployee.firstName')).sendKeys('ssss');
-   element(by.model('selectedEmployee.lastName')).sendKeys('ssss');
-   element(by.model('selectedEmployee.startDate')).sendKeys('2019-04-06');
-   element(by.model('selectedEmployee.email')).sendKeys('ssss@sssss.com');
+   element(by.model('selectedEmployee.firstName')).sendKeys(TestData.create.firstName);
+   element(by.model('selectedEmployee.lastName')).sendKeys(TestData.create.lastName);
+   element(by.model('selectedEmployee.startDate')).sendKeys(TestData.create.startDate);
+   element(by.model('selectedEmployee.email')).sendKeys(TestData.create.email);
    element(by.css('button[type="submit"]:nth-child(2)')).click();
    console.log("Test Case : Enter User Details");
   });
@@ -58,10 +60,10 @@ it('validate user label', function() {
    element(by.model('selectedEmployee.lastName')).clear();
    element(by.model('selectedEmployee.startDate')).clear();
    element(by.model('selectedEmployee.email')).clear();
-   element(by.model('selectedEmployee.firstName')).sendKeys('ssss');
-   element(by.model('selectedEmployee.lastName')).sendKeys('ssss');
-   element(by.model('selectedEmployee.startDate')).sendKeys('2019-04-06');
-   element(by.model('selectedEmployee.email')).sendKeys('ssss@ssss.com');
+   element(by.model('selectedEmployee.firstName')).sendKeys(TestData.create.firstName);
+   element(by.model('selectedEmployee.lastName')).sendKeys(TestData.create.lastName);
+   element(by.model('selectedEmployee.startDate')).sendKeys(TestData.create.startDate);
+   element(by.model('selectedEmployee.email')).sendKeys(TestData.create.email);
    element(by.css('button[type="submit"]:nth-child(1)')).click();
    console.log("Test Case : Update User Details");
   });
