@@ -19,6 +19,7 @@ it('validate user label', function() {
 		 var lbl=element(by.css('form#login-form > fieldset > label:nth-child(3) > span'));
 		 expect(lbl.getText()).toEqual('Username*');
 				console.log("Test Case : validate user label");
+				
 			});
 			
 	
@@ -28,7 +29,7 @@ it('validate user label', function() {
 	element(by.model('user.password')).sendKeys('Skywalker');
 	element(by.css('button[type="submit"]')).click();
     expect(element(by.id('greetings')).getText()).toEqual('Hello Luke');
-	console.log("Test Case : Enter Login and click");
+	console.log("Test Case : Enter Login Details and click");
   
   });
   
