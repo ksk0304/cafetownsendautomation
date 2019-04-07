@@ -50,7 +50,8 @@ it('validate user label', function() {
  it('Update User Details', function() {
 	 
 //	element(by.id('employee-list')).click();
-element.all(by.repeater('employee in employees')).get(0).click();
+  element(by.cssContainingText('li', 'ssss ssss')).click();
+//element.all(by.repeater('employee in employees')).get(0).click();
 	element(by.id('bEdit')).click();
 	element(by.model('selectedEmployee.firstName')).clear();
    element(by.model('selectedEmployee.lastName')).clear();
@@ -65,7 +66,8 @@ element.all(by.repeater('employee in employees')).get(0).click();
   });
   
   it('Delete User Details', function() {
-	element.all(by.repeater('employee in employees')).get(0).click();
+	  element(by.cssContainingText('li', 'ssss ssss')).click();
+	//element.all(by.repeater('employee in employees')).get(0).click();
 	element(by.id('bDelete')).click();
 	var alertDialog = browser.switchTo().alert();
 				alertDialog.accept();
